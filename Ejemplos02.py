@@ -1,14 +1,18 @@
 #Python es un lenguaje de tipado dinámico
+"""
 dia = "Lunes"
-
 #str
 print(type(dia)) 
-dia = 1 #int 
+dia = 1 #int
+print(type(dia))
+#dia = "miercoles"
 suma = dia + 1
 print(type(dia))
-dia = 'Martes' #str
+print(suma)
 
+dia = 'Martes' #str
 print(dia)
+
 edad = 15
 nueva_edad = edad + 1000
 edad = 30
@@ -16,7 +20,7 @@ print(edad)
 print(nueva_edad)
 nombre = None;
 print(type(nombre))
-
+"""
 # Operaciones aitméticas
 
 """
@@ -29,25 +33,25 @@ print(a / b)
 print(a // b)
 print(a % b)
 print(a ** b)
-
 """
+
 
 # Operadores lógicos
-"""
+
 a = True
 b = False
 print(a and b)
 print(a or b)
 print(not a)
 print(not (a or b))
-"""
 
-"""
+
+
 x = 10
-print(x > 5 and x < 20)
-print(x > 5 and x < 9)
-print(x > 5 or x < 9)
-"""
+print(x > 5 and x < 20) #True
+print(x > 5 and x < 9) #False
+print(x > 5 or x < 9) #True
+
 
 #Operadores de asingación
 """
