@@ -37,7 +37,7 @@ print(a ** b)
 
 
 # Operadores lógicos
-
+"""
 a = True
 b = False
 print(a and b)
@@ -51,7 +51,13 @@ x = 10
 print(x > 5 and x < 20) #True
 print(x > 5 and x < 9) #False
 print(x > 5 or x < 9) #True
-
+"""
+"""
+exp1 = 3 // 2 * 5 + 10
+exp2 = 3 / 2 *5 +  10
+print(exp1)
+print(exp2)
+"""
 
 #Operadores de asingación
 """
@@ -60,8 +66,8 @@ n += 5
 n *= 2
 n -= 4
 print(n)
-"""
 
+"""
 
 #Operadores de pertenencia
 """
@@ -74,7 +80,6 @@ print("ma" in name)
 
 #Precedencia de operadores
 
-"""
+
 result = 2 + 3 * 4
 print(result)
-"""
