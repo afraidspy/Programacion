@@ -72,8 +72,17 @@ def main():
         print(ganador)
         print("fin del programa")
         
-#Aquí empieza la ejecución principal del programa    
-main()
+#Aquí empieza la ejecución principal del programa
+while True:
+    desea_jugar =  input("¿Quieres jugar piedra papel o tijera?").strip().upper()
+    if desea_jugar == "SI":
+        main()
+    elif desea_jugar == "NO":
+        break
+    else:
+        print("Opción no válida")
+
+
         
     
     
