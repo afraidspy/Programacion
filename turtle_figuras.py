@@ -43,3 +43,64 @@ Dibuja 8 figuras:
 cuadrado si el número es par
 triángulo si es impar
 """
+
+import turtle
+
+# Crea la ventana donde aparecerán los dibujos
+screen = turtle.Screen()
+screen.setup(width=1000, height=400)  # Define el tamaño de la ventana
+screen.title("Figuras pares e impares")  # Define el título de la ventana
+
+# Crea la tortuga que dibujará las figuras
+pen = turtle.Turtle()
+pen.speed(5)  # Define la velocidad del dibujo
+
+# Función para dibujar un cuadrado
+def dibuja_cuadrado(size):
+    count = 0  # Contador para repetir 4 veces
+    while count < 4:  # Un cuadrado tiene 4 lados
+        pen.forward(size)  # Dibuja un lado
+        pen.left(90)  # Gira 90 grados a la izquierda
+        count += 1  # Aumenta el contador
+
+# Función para dibujar un triángulo
+def dibuja_triangulo(size):
+    count = 0  # Contador para repetir 3 veces
+    while count < 3:  # Un triángulo tiene 3 lados
+        pen.forward(size)  # Dibuja un lado
+        pen.left(120)  # Gira 120 grados a la izquierda
+        count += 1  # Aumenta el contador
+
+# Levanta el lápiz para mover la tortuga sin dibujar
+pen.penup()
+
+# Mueve la tortuga hacia la parte izquierda de la ventana
+# Esto ayuda a que las 8 figuras quepan en la pantalla
+pen.goto(-420, 0)
+
+# Vuelve a bajar el lápiz para empezar a dibujar
+pen.pendown()
+
+total = 1  # Empieza a contar desde 1
+
+# Repite hasta dibujar 8 figuras
+while total <= 8:
+    # Si el número es par, dibuja un cuadrado
+    if total % 2 == 0:
+        dibuja_cuadrado(50)
+    else:
+        # Si el número es impar, dibuja un triángulo
+        dibuja_triangulo(50)
+
+    # Se mueve a la derecha solo si no es la última figura
+    if total < 8:
+        pen.penup()  # Levanta el lápiz para no dibujar al moverse
+        pen.forward(80)  # Avanza para dejar espacio entre figuras
+        pen.pendown()  # Baja el lápiz para dibujar la siguiente figura
+
+    total += 1  # Aumenta el contador
+
+# Mantiene la ventana abierta
+turtle.done()
+
+

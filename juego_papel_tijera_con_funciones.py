@@ -51,13 +51,15 @@ def determinar_ganador(opcion_compu, opcion_usuario):
         return "Ganaste"
     else:
         return "Perdiste"
-    
 
-def main():
+
+
+def main(contador_ganador, contador_perdidos, contador_empate):
     """
         Aquí se mandan a llamar a las funciones anteriores
         para ejecutar el juego
     """
+    
     opcion_maquina = obtener_opcion_maquina()
     opcion_usuario = obtener_opcion_usuario()
     
@@ -68,21 +70,51 @@ def main():
         print(opcion_maquina)
         print("La opción de usuario es: ")
         print(opcion_usuario)
-        ganador = determinar_ganador(opcion_maquina , opcion_usuario)
+        ganador = determinar_ganador(opcion_maquina , opcion_usuario).strip()
+        print("Ganador: ", ganador)
+        if ganador == "Ganaste":
+            contador_ganador += 1
+        elif ganador == "Perdiste":
+            contador_perdidos += 1
+        else:
+            contador_empate +=1
+            
         print(ganador)
         print("fin del programa")
+    return (contador_ganador, contador_perdidos, contador_empate)
         
 #Aquí empieza la ejecución principal del programa
+contador_total_juegos = 0
+contador_ganador = 0
+contador_perdidos = 0
+contador_empate = 0
+ 
 while True:
-    desea_jugar =  input("¿Quieres jugar piedra papel o tijera?").strip().upper()
-    if desea_jugar == "SI":
-        main()
-    elif desea_jugar == "NO":
+    opcion = input("¿Quieres jugar?: ").strip().upper()#Si o No
+    
+    if opcion == "SI":
+        contador_total_juegos += 1
+        a,b,c = main(contador_ganador, contador_perdidos, contador_empate)
+        contador_ganador = a
+        contador_perdidos = b
+        contador_empate = c
+        
+    elif opcion == "NO":
+        print("Ganados: ",contador_ganador)
+        print("Perdidos", contador_perdidos)
+        print("Empate:",contador_empate)
         break
     else:
-        print("Opción no válida")
+        print("Opción NO válida")
+
+print("Fin del programa")
+print("Total juegos jugados: ", contador_total_juegos)
+print("Total juegos ganados: ",contador_ganador)
+print("Total juegos perdidos: ",contador_perdidos)
+print("Total juegos empate: ",contador_empate)
 
 
+#Investigar que es el paso por valor y paso por referencia en PYTHON
         
     
     
