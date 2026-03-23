@@ -34,8 +34,24 @@ def factorial(n):
         factorial_res *= i
     
     return factorial_res
+
+def numero_reves(n):
+    numero_invertido = 0
+    
+    while n > 0:
+        digito_residuo = n % 10
+        n = n // 10
+        print("Numero invertido antes: ",numero_invertido )
+        numero_invertido = numero_invertido*10 + digito_residuo 
+        print("Numero_invertido: ", numero_invertido)
+        print("NUMERO: ", n)
+    
+    return numero_invertido
+    
         
     
 opcion =  int(input("Escribe un numero: "))
-suma_pares_impares(opcion)
-print(factorial(3))
+#suma_pares_impares(opcion)
+#print(factorial(3))
+
+print(numero_reves(opcion))
