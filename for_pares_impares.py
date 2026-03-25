@@ -47,11 +47,33 @@ def numero_reves(n):
         print("NUMERO: ", n)
     
     return numero_invertido
+
+def es_numero_perfecto(n):
+    suma_divisores = 0
+    for divisor in range (1, n):
+        if n % divisor == 0:
+            suma_divisores += divisor
+            
+    # Validar si la suma_divisores == n (número)
+    """if suma_divisores == n:
+        return True
+    else:
+        return False
+    """
+    return suma_divisores == n
     
         
-    
+
 opcion =  int(input("Escribe un numero: "))
 #suma_pares_impares(opcion)
 #print(factorial(3))
+#print(numero_reves(opcion))
+print(es_numero_perfecto(opcion))
+#Calculando los números perfectos entre 1 y 1000
 
-print(numero_reves(opcion))
+for i in range(1, 1001): # Primer for
+    if es_numero_perfecto(i) == True: #Segundo for
+        print(i , " es_numero_perfecto")
+
+        
+
