@@ -1,7 +1,7 @@
 class Robot:
     
-    def __init__(self):
-        ##Self
+    def __init__(self):# Mètodo constructor : Inicializa el estado del objeto
+        ## Self
         ## referencia al objeto actual dentro de una clase
         """
             Constructor de la clase
@@ -48,10 +48,11 @@ class Robot:
         self.__num_armas =  nuevo_num_armas
         
 #Aqui termina la clase    
-bunny = Robot() #Esta línea crea un objeto de la clase 
+bunny = Robot() #Esta línea crea un objeto de la clase y manda a llamar al mètodo init
 """
 La abstracción, se refiere a solo mostrar lo importante y
 ocultar los detalles internos de funcionamiento.
+
 Desde fuera, nosotros solo sabemos que el robot:
 se le puede cambiar el peso
 se le puede cambiar el numero de armas
@@ -61,10 +62,13 @@ sin que el usuario necesite entender cómo está implementado internamente.
 """
 bunny.set_peso(500)
 bunny.set_num_armas(10)
-
-
-
 print("Peso: ",bunny.get_peso())
 print("Nombre:  ", bunny.nombre)
 print("Edad: ", bunny.get_edad())
 print("Num armas: ", bunny.get_num_armas())
+
+print(bunny.nombre)
+bunny.nombre = "Robotin"
+print(bunny.nombre)
+#bunny.__edad = 900
+#print(bunny.__edad) -- visibilidad privada

@@ -53,7 +53,7 @@ class Robot:
         """
         Modifica la edad del robot.
 
-        Parámetros:
+        Paràmetros:
             nueva_edad (float): Nueva edad del robot.
         """
         self.__edad = nueva_edad
@@ -124,10 +124,13 @@ print("Nombre:", bunny.nombre)
 print("Edad:", bunny.get_edad())
 print("Número de armas:", bunny.get_num_armas())
 
+print(bunny)
+print(bunny.__str__())
 
-robot2 = Robot()
-print("¿Son iguales?", bunny == robot2)
-#Coloca tu codiugo aquó
+robotin =  Robot()
 
-# Comparar nuevamente
-print("¿Ahora son iguales?", bunny == robot2)
+print(bunny.__eq__(bunny))
+print(bunny.__eq__(robotin))
+
+
+print("¿Son iguales?", bunny == robotin)
