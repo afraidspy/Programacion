@@ -50,6 +50,29 @@ class Racional:
         
         return Racional(numerador_r, denominador_r)
     
+    def multiplicacion(self, otro:object) -> object:
+        """
+            racional1 =  a / b --> self
+            racional2 = c / d  ---> otro
+            multiplicacion = a*d / c*b
+        """
+        #numerador_m = self1.get_numerador() *otro.get_denominador()
+        #denomiador_m = otro.get_numerador() * self.get_denominador()
+        
+        return Racional(self.get_numerador() *otro.get_denominador(),
+                        otro.get_numerador() * self.get_denominador())
+    
+    def divison(self, otro:object) -> object:
+        """
+            racional1 =  a / b --> self
+            racional2 = c / d  ---> otro
+            division = a * c / b *d
+        """
+        
+        return Racional(self.get_numerador()* otro.get_numerador(),
+                        self.get_denominador()*otro.get_denominador())
+        
+    
     def __str__(self)-> str:
         cadena_racional = f"{self.__numerador} / {self.__denominador}"
         return cadena_racional
@@ -90,3 +113,11 @@ print(racional1)
 print("¿Son iguales?", racional1.__eq__(racional2))
 print("¿Son iguales?", racional1 == racional2)
 print("¿Son iguales?", racional1 == racional3)
+
+
+print("Multiplicacióin: ", racional1.multiplicacion(racional2))
+print("Division: ", racional1.divison(racional2))
+
+#Ejercicio:
+# Crear un método simplificar  8/4 --> 2  9/6 = 3/2
+# Firma del método def simplicar(self, numero_racional:object)-> object:

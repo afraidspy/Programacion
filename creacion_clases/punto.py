@@ -12,7 +12,7 @@ class Punto:
     e imprimirse como una pareja ordenada.
     """
 
-    def __init__(self, x: float = 0, y: float = 0) -> None:
+    def __init__(self, x: float = 1, y: float = 1) -> None:
         """
         Inicializa un punto con coordenadas x e y.
 
@@ -148,6 +148,9 @@ if __name__ == "__main__":
     punto1 = Punto(2, 2)
     punto2 = Punto(1, 1)
     punto3 = punto1.suma(punto2)
+    
+    punto4 = Punto()
+    
 
     print("x", punto3.get_x())
     print("y", punto3.get_y())
