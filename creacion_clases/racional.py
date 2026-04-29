@@ -108,7 +108,8 @@ print("Numerador de resta:  ", racional_resta.get_numerador())
 print("Denonminador de resta: ", racional_resta.get_denominador())
 
 racional3 = Complejo()
-
+print(racional1)
+print(racional1.__str__())
 print(racional1)
 print("¿Son iguales?", racional1.__eq__(racional2))
 print("¿Son iguales?", racional1 == racional2)
